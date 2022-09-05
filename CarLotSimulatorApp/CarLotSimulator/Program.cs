@@ -50,10 +50,14 @@ namespace CarLotSimulator
             ford.MakeEngineNoise();
             ford.MakeHonkNoise();
 
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
+
             foreach (var car in lot.CarList)
             {
                 Console.WriteLine($"Make:{car.Make}, Model:{car.Model}, Year:{car.Year}");
             }
+
+
         }
     }
 }
