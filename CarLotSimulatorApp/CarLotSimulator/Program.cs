@@ -31,6 +31,7 @@ namespace CarLotSimulator
             CarLot lot = new CarLot();
 
             Car jeep = new Car();
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
             lot.CarList.Add(jeep);
 
             jeep.Year = 2019;
@@ -44,19 +45,26 @@ namespace CarLotSimulator
             jeep.MakeHonkNoise();
 
             Car kia = new Car() { Year = 2011, Make = "Kia", Model = "Optima", EngineNoise = "Cya", HonkNoise = "SlowMo" };
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
+
             lot.CarList.Add(kia);
             Car ford = new Car(1960, "Ford", "F-150", "guzzling", "circus noise");
+            CarLot.numberOfCars++;   //incrementing the car lot when calling with the above method since the constructor is not called this way.
+
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
+
             lot.CarList.Add(ford);
             ford.MakeEngineNoise();
             ford.MakeHonkNoise();
 
-            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
+            
 
             foreach (var car in lot.CarList)
             {
                 Console.WriteLine($"Make:{car.Make}, Model:{car.Model}, Year:{car.Year}");
             }
 
+            Console.Read();
 
         }
     }

@@ -22,7 +22,7 @@ namespace CarLotSimulator
             Model = model;
             EngineNoise = engineNoise;
             HonkNoise = honkNoise;  
-            IsDriveable = isDriveable;
+            IsDriveable = isDriveable;            
         }
 
         public void MakeEngineNoise()
